@@ -1,3 +1,4 @@
+import Footer from "@/components/Footer";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -50,11 +51,11 @@ export default function Home() {
           </h1>
 
           <p className="text-gray-300 text-xl md:text-2xl mb-4 animate-fade-in-left delay-2 roboto-light">
-            L&apos;authenticite du Sichuan dans chaque bouchee
+            L&apos;authenticité du Sichuan dans chaque bouchée
           </p>
 
           <p className="text-gray-400 text-lg mb-12 animate-fade-in-right delay-3 roboto-light-italic">
-            Paris 9eme - Cuisine traditionnelle chinoise
+            Paris 9ème - Cuisine traditionnelle chinoise
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up delay-4">
@@ -86,7 +87,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <p className="text-red-600 text-sm tracking-[0.3em] uppercase mb-4 roboto-light">
-              Nos Specialites
+              Nos Specialités
             </p>
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
               Saveurs du <span className="text-red-600 longcang">四川</span>
@@ -127,7 +128,7 @@ export default function Home() {
               href="/menu"
               className="inline-flex items-center gap-2 text-red-600 hover:text-red-500 transition-colors roboto-regular group"
             >
-              Decouvrir tous nos plats
+              Découvrir tous nos plats
               <svg
                 className="w-5 h-5 group-hover:translate-x-1 transition-transform"
                 fill="none"
@@ -179,11 +180,11 @@ export default function Home() {
               </h2>
               <p className="text-gray-400 text-lg mb-6 roboto-light leading-relaxed">
                 Notre restaurant vous invite a un voyage culinaire au coeur du
-                Sichuan, une province celebre pour ses saveurs audacieuses et
+                Sichuan, une province célèbre pour ses saveurs audacieuses et
                 son art du piment.
               </p>
               <p className="text-gray-400 text-lg mb-8 roboto-light leading-relaxed">
-                Chaque plat est prepare avec des ingredients authentiques et des
+                Chaque plat est preparé avec des ingredients authentiques et des
                 recettes traditionnelles transmises de generation en generation.
               </p>
 
@@ -191,11 +192,11 @@ export default function Home() {
                 <div className="text-center">
                   <p className="text-4xl font-bold text-red-600">15+</p>
                   <p className="text-gray-400 text-sm roboto-light">
-                    Annees d&apos;experience
+                    Années d&apos;expérience
                   </p>
                 </div>
                 <div className="text-center">
-                  <p className="text-4xl font-bold text-red-600">50+</p>
+                  <p className="text-4xl font-bold text-red-600">60+</p>
                   <p className="text-gray-400 text-sm roboto-light">
                     Plats authentiques
                   </p>
@@ -220,10 +221,10 @@ export default function Home() {
 
         <div className="relative z-10 max-w-4xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Pret a decouvrir nos <span className="text-red-600">saveurs</span> ?
+            Prêt à découvrir nos <span className="text-red-600">saveurs</span> ?
           </h2>
           <p className="text-gray-400 text-xl mb-10 roboto-light">
-            Consultez notre menu et laissez-vous tenter par nos specialites
+            Consultez notre menu et laissez-vous tenter par nos spécialités
             sichuanaises
           </p>
           <Link
@@ -244,7 +245,7 @@ export default function Home() {
                 SICHUAN <span className="text-red-600 longcang">四川</span>
               </h3>
               <p className="text-gray-400 roboto-light">
-                L&apos;authenticite du Sichuan a Paris
+                L&apos;authenticité du Sichuan a Paris
               </p>
             </div>
             <div>
@@ -256,7 +257,7 @@ export default function Home() {
                 Lun - Sam: 18h30 - 22h30
               </p>
               <p className="text-red-600 roboto-light mt-2">
-                Ferme le mercredi
+                Fermé le mercredi
               </p>
             </div>
             <div>
@@ -269,9 +270,10 @@ export default function Home() {
             </div>
           </div>
           <div className="divider mt-8 mb-6" />
-          <p className="text-center text-gray-500 text-sm roboto-light">
-            &copy; 2025 Restaurant Sichuan Paris. Tous droits reserves.
-          </p>
+          {/* <p className="text-center text-gray-500 text-sm roboto-light">
+            &copy; 2025 Restaurant Sichuan Paris. Tous droits réservés.
+          </p> */}
+          <Footer />
         </div>
       </footer>
     </div>

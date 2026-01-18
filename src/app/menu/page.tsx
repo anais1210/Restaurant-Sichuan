@@ -1,3 +1,4 @@
+import Footer from "@/components/Footer";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -22,7 +23,7 @@ export default function Menu() {
 
         <div className="relative z-10 text-center px-4">
           <p className="text-amber-400 text-sm tracking-[0.3em] uppercase mb-4 animate-fade-in-down roboto-light">
-            Decouvrez nos plats
+            Découvrez nos plats
           </p>
           <h1 className="text-5xl md:text-7xl font-bold text-white animate-fade-in-up">
             Notre <span className="text-red-600">Menu</span>
@@ -58,8 +59,8 @@ export default function Menu() {
                 Consultez notre carte
               </h2>
               <p className="text-gray-400 text-lg roboto-light max-w-lg mx-auto">
-                Explorez notre selection de plats traditionnels du Sichuan, des
-                entrees aux desserts, en passant par nos specialites maison.
+                Explorez notre sélection de plats traditionnels du Sichuan, des
+                entrées aux desserts, en passant par nos spécialités maison.
               </p>
             </div>
 
@@ -103,7 +104,7 @@ export default function Menu() {
               <div className="text-red-600 text-3xl mb-3">🥢</div>
               <h3 className="text-white font-bold mb-2">Fait maison</h3>
               <p className="text-gray-400 text-sm roboto-light">
-                Tous nos plats sont prepares sur place chaque jour
+                Tous nos plats sont préparés sur place chaque jour
               </p>
             </div>
             <div className="card p-6 text-center">
@@ -122,7 +123,7 @@ export default function Menu() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <p className="text-red-600 text-sm tracking-[0.3em] uppercase mb-4 roboto-light">
-              Apercu
+              Aperçu
             </p>
             <h2 className="text-3xl md:text-4xl font-bold text-white">
               Quelques-uns de nos plats
@@ -165,7 +166,7 @@ export default function Menu() {
           </h2>
           <p className="text-gray-400 mb-8 roboto-light">
             N&apos;hesitez pas a nous contacter pour toute information sur les
-            allergenes ou pour des demandes speciales.
+            allergènes ou pour des demandes spéciales.
           </p>
           <Link
             href="/contact"
@@ -188,6 +189,7 @@ export default function Menu() {
           </Link>
         </div>
       </section>
+      <Footer />
     </div>
   );
 }

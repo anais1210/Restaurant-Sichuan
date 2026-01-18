@@ -1,3 +1,4 @@
+import Footer from "@/components/Footer";
 import Image from "next/image";
 
 export default function Contact() {
@@ -30,7 +31,7 @@ export default function Contact() {
             Nous <span className="text-red-600">Contacter</span>
           </h1>
           <p className="text-gray-400 text-lg mt-4 animate-fade-in delay-2 roboto-light">
-            Au coeur du 9eme arrondissement
+            Au coeur du 9ème arrondissement
           </p>
         </div>
       </section>
@@ -120,7 +121,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="text-white text-xl font-bold mb-2">
-                      Telephone
+                      Téléphone
                     </h3>
                     <p className="text-gray-400 roboto-light">
                       +33 1 47 70 64 11
@@ -179,7 +180,7 @@ export default function Contact() {
                           Mercredi
                         </span>
                         <span className="text-red-600 roboto-regular">
-                          Ferme
+                          Fermé
                         </span>
                       </div>
                       <div className="flex justify-between items-center pb-2 border-b border-white/10">
@@ -234,7 +235,7 @@ export default function Contact() {
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
             <p className="text-red-600 text-sm tracking-[0.3em] uppercase mb-4 roboto-light">
-              Acces
+              Accès
             </p>
             <h2 className="text-3xl md:text-4xl font-bold text-white">
               Comment nous rejoindre
@@ -267,13 +268,14 @@ export default function Contact() {
                   Lignes 26, 32, 42, 43
                 </p>
                 <p className="text-gray-400 text-sm roboto-light">
-                  Arret Le Peletier
+                  Arrêt Le Peletier
                 </p>
               </div>
             </div>
           </div>
         </div>
       </section>
+      <Footer />
     </div>
   );
 }
