@@ -28,17 +28,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="fr">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#0a0a0a]`}
       >
         <Header />
-        <div
-          className="relative w-full mt-20"
-          style={{ height: "calc(100vh - 80px)" }}
-        >
+        <main className="pt-20">
           {children}
-        </div>
+        </main>
       </body>
     </html>
   );

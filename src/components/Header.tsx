@@ -1,3 +1,6 @@
+"use client";
+
+import { useState, useEffect } from "react";
 import {
   Disclosure,
   DisclosureButton,
@@ -6,90 +9,138 @@ import {
 import Image from "next/image";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
-// import { ClassProps } from "@/app/type";
 
 const navigation = [
-  { name: "MENU", href: "/menu", current: false },
-  { name: "CONTACT", href: "/contact", current: false },
-  // { name: "NOTRE HISTORE", href: "/history", current: false },
+  { name: "Accueil", href: "/" },
+  { name: "Menu", href: "/menu" },
+  { name: "Contact", href: "/contact" },
 ];
 
-function classNames(...classes: string[]) {
-  return classes.filter(Boolean).join(" ");
-}
-
 export default function Header() {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <div>
-      <Disclosure as="nav" className="fixed top-0 w-full bg-[#1E1E1E] z-50">
-        <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 roboto-regular">
-          <div className="relative flex h-20 items-center justify-between">
-            <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
-              {/* Mobile menu button*/}
-              <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md p-2 text-white hover:bg-[#990001] hover:text-white focus:ring-2 focus:ring-white focus:outline-hidden focus:ring-inset transition-colors duration-200">
-                <span className="absolute -inset-0.5" />
-                <span className="sr-only">Open main menu</span>
-                <Bars3Icon
-                  aria-hidden="true"
-                  className="block size-6 group-data-open:hidden"
-                />
-                <XMarkIcon
-                  aria-hidden="true"
-                  className="hidden size-6 group-data-open:block"
-                />
-              </DisclosureButton>
-            </div>
-            <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-              <div className="flex shrink-0 items-center">
-                <Link href="/">
-                  <Image src="/imgs/logo.png" alt="" width={55} height={55} />
+    <Disclosure
+      as="nav"
+      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+        scrolled ? "bg-black/90 backdrop-blur-md shadow-lg" : "bg-transparent"
+      }`}
+    >
+      {({ open }) => (
+        <>
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="relative flex h-20 items-center justify-between">
+              {/* Logo */}
+              <div className="flex items-center">
+                <Link href="/" className="flex items-center gap-3 group">
+                  <div className="relative w-12 h-12 transition-transform duration-300 group-hover:scale-110">
+                    <Image
+                      src="/imgs/logo.png"
+                      alt="Sichuan Logo"
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
+                  <span className="hidden sm:block text-white font-bold text-lg">
+                    SICHUAN{" "}
+                    <span className="text-red-600 longcang">川里川外</span>
+                  </span>
                 </Link>
               </div>
-              <div className="hidden sm:ml-6 sm:block"></div>
-            </div>
-            <div className="hidden sm:block absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
-              <div className="flex space-x-4">
+
+              {/* Desktop Navigation */}
+              <div className="hidden md:flex items-center gap-8">
                 {navigation.map((item) => (
-                  <a
+                  <Link
                     key={item.name}
                     href={item.href}
-                    aria-current={item.current ? "page" : undefined}
-                    className={classNames(
-                      item.current
-                        ? "text-white"
-                        : "text-white hover:text-white",
-                      "rounded-md px-3 py-2 text-sm font-medium"
-                    )}
+                    className="text-gray-300 hover:text-white text-sm tracking-wide transition-colors duration-200 roboto-regular relative group"
                   >
                     {item.name}
-                  </a>
+                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-red-600 transition-all duration-300 group-hover:w-full" />
+                  </Link>
                 ))}
+                <a
+                  href="tel:+33147706411"
+                  className="flex items-center gap-2 px-5 py-2 bg-red-600 hover:bg-red-700 text-white text-sm rounded-full transition-all duration-300 roboto-regular"
+                >
+                  <svg
+                    className="w-4 h-4"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                    />
+                  </svg>
+                  Reserver
+                </a>
+              </div>
+
+              {/* Mobile menu button */}
+              <div className="md:hidden">
+                <DisclosureButton className="relative inline-flex items-center justify-center rounded-lg p-2 text-gray-300 hover:bg-white/10 hover:text-white transition-colors duration-200">
+                  <span className="sr-only">Ouvrir le menu</span>
+                  {open ? (
+                    <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
+                  ) : (
+                    <Bars3Icon className="block h-6 w-6" aria-hidden="true" />
+                  )}
+                </DisclosureButton>
               </div>
             </div>
           </div>
-        </div>
 
-        <DisclosurePanel className="sm:hidden">
-          <div className="space-y-1 px-2 pt-2 pb-3">
-            {navigation.map((item) => (
-              <DisclosureButton
-                key={item.name}
-                as="a"
-                href={item.href}
-                aria-current={item.current ? "page" : undefined}
-                className={classNames(
-                  item.current
-                    ? "bg-gray-900 text-white"
-                    : "text-white  hover:text-white",
-                  "block rounded-md px-3 py-2 text-base font-medium"
-                )}
-              >
-                {item.name}
-              </DisclosureButton>
-            ))}
-          </div>
-        </DisclosurePanel>
-      </Disclosure>
-    </div>
+          {/* Mobile Navigation Panel */}
+          <DisclosurePanel className="md:hidden">
+            <div className="glass mx-4 mb-4 rounded-xl overflow-hidden">
+              <div className="space-y-1 px-4 py-4">
+                {navigation.map((item) => (
+                  <DisclosureButton
+                    key={item.name}
+                    as="a"
+                    href={item.href}
+                    className="block px-4 py-3 text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors duration-200 roboto-regular"
+                  >
+                    {item.name}
+                  </DisclosureButton>
+                ))}
+                <a
+                  href="tel:+33147706411"
+                  className="flex items-center justify-center gap-2 mx-4 mt-4 px-5 py-3 bg-red-600 hover:bg-red-700 text-white rounded-full transition-all duration-300 roboto-regular"
+                >
+                  <svg
+                    className="w-4 h-4"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                    />
+                  </svg>
+                  Reserver
+                </a>
+              </div>
+            </div>
+          </DisclosurePanel>
+        </>
+      )}
+    </Disclosure>
   );
 }
