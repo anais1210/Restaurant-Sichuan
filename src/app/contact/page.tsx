@@ -123,9 +123,7 @@ export default function Contact() {
                     <h3 className="text-white text-xl font-bold mb-2">
                       Téléphone
                     </h3>
-                    <p className="text-gray-400 roboto-light">
-                      +33 1 47 70 64 11
-                    </p>
+                    <p className="text-gray-400 roboto-light">+33147706411</p>
                     <a
                       href="tel:+33147706411"
                       className="inline-flex items-center gap-2 mt-3 px-6 py-2 bg-red-600 hover:bg-red-700 text-white text-sm rounded-full transition-all duration-300 roboto-regular"
