@@ -2,8 +2,9 @@ import Footer from "@/components/Footer";
 import Image from "next/image";
 import Link from "next/link";
 
-const GOOGLE_DRIVE_FILE_ID = "1uLnEyCFJvQ4shQl3vqQwdkjn-U2bzWIW";
-const pdfViewUrl = `https://drive.google.com/file/d/${GOOGLE_DRIVE_FILE_ID}/view`;
+// const GOOGLE_DRIVE_FILE_ID = "1uLnEyCFJvQ4shQl3vqQwdkjn-U2bzWIW";
+const pdfViewUrl =
+  "https://drive.google.com/file/d/1L1L0Jpa3rNK9CxEY0vwozQqQfSEzv-w1/view?usp=sharing";
 
 export default function Menu() {
   return (
