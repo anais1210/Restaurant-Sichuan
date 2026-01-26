@@ -1,0 +1,96 @@
+{
+  "faq": [
+    {
+      "question": "Où se trouve le restaurant ?",
+      "variations": [
+        "adresse",
+        "localisation",
+        "où êtes-vous",
+        "comment venir"
+      ],
+      "reponse": "Le Restaurant Sichuan Paris est situé au 17 Rue Le Peletier, 75009 Paris, dans le 9ème arrondissement."
+    },
+    {
+      "question": "Quels sont vos horaires d'ouverture ?",
+      "variations": ["heures", "ouvert quand", "horaires", "fermé quand"],
+      "reponse": "Nous sommes ouverts de lundi à dimanche (sauf mercredi) de 12h00 à 14h30 pour le déjeuner et de 18h30 à 22h30 pour le dîner. Nous sommes fermés le mercredi."
+    },
+    {
+      "question": "Êtes-vous ouvert le dimanche ?",
+      "variations": ["dimanche", "weekend"],
+      "reponse": "Oui, nous sommes ouverts le dimanche de 12h00 à 14h30 pour le déjeuner et de 18h30 à 22h30 pour le dîner."
+    },
+    {
+      "question": "Comment puis-je réserver ?",
+      "variations": ["réservation", "réserver une table", "booking"],
+      "reponse": "Vous pouvez réserver par téléphone au +33 1 47 70 64 11. N'hésitez pas à nous appeler pour réserver votre table."
+    },
+    {
+      "question": "Quel est votre numéro de téléphone ?",
+      "variations": ["téléphone", "appeler", "contact", "numéro"],
+      "reponse": "Notre numéro de téléphone est le +33 1 47 70 64 11."
+    },
+    {
+      "question": "Avez-vous des plats végétariens ?",
+      "variations": ["végétarien", "sans viande", "légumes", "tofu"],
+      "reponse": "Oui, nous proposons plusieurs plats végétariens incluant des plats de tofu (comme le Mapo Tofu) et des légumes sautés. N'hésitez pas à consulter notre carte ou à nous demander."
+    },
+    {
+      "question": "Les plats sont-ils très épicés ?",
+      "variations": ["épicé", "piquant", "piment", "fort"],
+      "reponse": "Nos plats sont notés selon leur niveau de piquant. Nous proposons des plats allant de non épicé à très épicé. N'hésitez pas à nous indiquer votre préférence et nous pouvons ajuster le niveau de piment."
+    },
+    {
+      "question": "Proposez-vous des informations sur les allergènes ?",
+      "variations": ["allergies", "allergènes", "intolérances", "gluten"],
+      "reponse": "Oui, nous fournissons des informations sur les allergènes sur demande. N'hésitez pas à nous contacter pour toute question concernant les allergènes ou pour des demandes spéciales."
+    },
+    {
+      "question": "Quel métro pour venir ?",
+      "variations": ["métro", "transport", "comment venir", "accès"],
+      "reponse": "Les stations de métro les plus proches sont Le Peletier (ligne 7) directement sur notre rue, et Notre-Dame-de-Lorette (ligne 12) à quelques minutes à pied. Vous pouvez également prendre les bus 26, 32, 42 ou 43 jusqu'à l'arrêt Le Peletier."
+    },
+    {
+      "question": "Quelles sont vos spécialités ?",
+      "variations": [
+        "spécialités",
+        "plats recommandés",
+        "meilleurs plats",
+        "que recommandez-vous"
+      ],
+      "reponse": "Nos plats vedettes incluent le Boeuf Sur Plaque Chauffante (铁板牛肉), la Marmite de Poulet Chongqing (重庆鸡公煲) et les Nouilles Dan Dan (担担面). Notre chef vient directement de la province du Sichuan et prépare tous les plats avec des recettes traditionnelles."
+    },
+    {
+      "question": "Faites-vous de la livraison ?",
+      "variations": ["livraison", "delivery", "uber eats", "deliveroo"],
+      "reponse": "Pour les informations sur la livraison ou la vente à emporter, veuillez nous contacter directement par téléphone au +33 1 47 70 64 11."
+    },
+    {
+      "question": "Avez-vous un menu ?",
+      "variations": ["carte", "menu", "prix", "plats disponibles"],
+      "reponse": "Oui, notre menu complet est disponible sur notre site web. Nous proposons plus de 60 plats authentiques du Sichuan incluant des entrées, plats de boeuf, poulet, porc, fruits de mer, tofu, nouilles, riz et soupes."
+    },
+    {
+      "question": "Qui est le chef ?",
+      "variations": ["chef", "cuisinier", "cuisine"],
+      "reponse": "Notre chef vient directement de la province du Sichuan en Chine. Il possède plus de 15 ans d'expérience et prépare tous les plats sur place chaque jour avec des recettes traditionnelles transmises de génération en génération."
+    },
+    {
+      "question": "Acceptez-vous les groupes ?",
+      "variations": [
+        "groupe",
+        "réservation groupe",
+        "grande table",
+        "événement"
+      ],
+      "reponse": "Pour les réservations de groupe ou les événements spéciaux, veuillez nous contacter par téléphone au +33 1 47 70 64 11 afin que nous puissions organiser au mieux votre venue."
+    }
+  ],
+  "reponse_par_defaut": "Je suis désolé, je n'ai pas cette information. Pour toute question spécifique, n'hésitez pas à nous contacter par téléphone au +33 1 47 70 64 11 ou à consulter notre site web.",
+  "salutations": {
+    "bonjour": "Bonjour ! Bienvenue au Restaurant Sichuan Paris 川里川外. Comment puis-je vous aider ?",
+    "bonsoir": "Bonsoir ! Bienvenue au Restaurant Sichuan Paris 川里川外. Comment puis-je vous aider ?",
+    "merci": "Je vous en prie ! N'hésitez pas si vous avez d'autres questions.",
+    "au_revoir": "Au revoir et à bientôt au Restaurant Sichuan Paris !"
+  }
+}

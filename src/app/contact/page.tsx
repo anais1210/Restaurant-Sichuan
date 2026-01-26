@@ -205,6 +205,14 @@ export default function Contact() {
                           12h-14h30 / 18h30-22h30
                         </span>
                       </div>
+                      <div className="flex justify-between items-center">
+                        <span className="text-gray-400 roboto-light">
+                          Dimanche
+                        </span>
+                        <span className="text-white roboto-regular">
+                          12h-14h30 / 18h30-22h30
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </div>

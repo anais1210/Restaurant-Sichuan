@@ -1,0 +1,35 @@
+{
+  "adresse_complete": {
+    "rue": "17 Rue Le Peletier",
+    "code_postal": "75009",
+    "ville": "Paris",
+    "pays": "France",
+    "quartier": "9ème arrondissement",
+    "google_maps": "https://maps.google.com/?q=17+Rue+Le+Peletier+75009+Paris"
+  },
+  "metro": [
+    {
+      "ligne": "7",
+      "station": "Le Peletier",
+      "distance": "Station la plus proche, directement sur la rue Le Peletier",
+      "couleur": "Rose"
+    },
+    {
+      "ligne": "12",
+      "station": "Notre-Dame-de-Lorette",
+      "distance": "À quelques minutes à pied",
+      "couleur": "Vert"
+    }
+  ],
+  "bus": {
+    "lignes": ["26", "32", "42", "43"],
+    "arret": "Le Peletier",
+    "description": "Arrêt Le Peletier desservi par les lignes 26, 32, 42 et 43"
+  },
+  "acces_resume": "Le restaurant est facilement accessible en métro (ligne 7 - Le Peletier ou ligne 12 - Notre-Dame-de-Lorette) et en bus (lignes 26, 32, 42, 43 - arrêt Le Peletier). Situé dans le 9ème arrondissement de Paris.",
+  "indications": {
+    "depuis_opera": "Prendre la ligne 7 direction La Courneuve, descendre à Le Peletier",
+    "depuis_gare_du_nord": "Prendre la ligne 7 direction Villejuif, descendre à Le Peletier",
+    "depuis_montmartre": "Prendre la ligne 12 direction Mairie d'Issy, descendre à Notre-Dame-de-Lorette"
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "info_generale": {
+    "description": "Nos plats sont notés selon leur niveau de piquant. N'hésitez pas à nous contacter pour toute information sur les allergènes ou pour des demandes spéciales.",
+    "legende_piquant": {
+      "0": "Non épicé",
+      "1": "Légèrement épicé",
+      "2": "Moyennement épicé",
+      "3": "Très épicé"
+    },
+    "menu_complet_pdf": "/files/menu.pdf"
+  },
+  "plats_vedettes": [
+    {
+      "nom_francais": "Boeuf Sur Plaque Chauffante",
+      "nom_chinois": "铁板牛肉",
+      "description": "Boeuf grillé servi sur une plaque chauffante, un classique de la cuisine du Sichuan",
+      "categorie": "Boeuf"
+    },
+    {
+      "nom_francais": "Marmite de Poulet Chongqing",
+      "nom_chinois": "重庆鸡公煲",
+      "description": "Marmite de poulet épicée façon Chongqing, riche en saveurs et en piments",
+      "categorie": "Poulet"
+    },
+    {
+      "nom_francais": "Nouilles Dan Dan",
+      "nom_chinois": "担担面",
+      "description": "Nouilles traditionnelles du Sichuan avec sauce sésame épicée et viande hachée",
+      "categorie": "Nouilles"
+    }
+  ],
+  "categories": [
+    {
+      "nom": "Entrées",
+      "description": "Entrées traditionnelles du Sichuan"
+    },
+    {
+      "nom": "Boeuf",
+      "description": "Plats de boeuf préparés selon les recettes du Sichuan",
+      "exemples": ["Boeuf sur plaque chauffante", "Boeuf émincé aux piments"]
+    },
+    {
+      "nom": "Poulet",
+      "description": "Plats de poulet authentiques",
+      "exemples": ["Marmite de poulet Chongqing", "Poulet Kung Pao"]
+    },
+    {
+      "nom": "Porc",
+      "description": "Spécialités de porc du Sichuan",
+      "exemples": ["Porc sauté", "Porc à la sauce piquante"]
+    },
+    {
+      "nom": "Fruits de mer",
+      "description": "Poissons et fruits de mer cuisinés à la sichuanaise"
+    },
+    {
+      "nom": "Tofu",
+      "description": "Plats végétariens à base de tofu",
+      "exemples": ["Mapo Tofu"]
+    },
+    {
+      "nom": "Légumes",
+      "description": "Plats de légumes sautés et préparés"
+    },
+    {
+      "nom": "Nouilles",
+      "description": "Nouilles traditionnelles du Sichuan",
+      "exemples": ["Nouilles Dan Dan", "Nouilles sautées"]
+    },
+    {
+      "nom": "Riz",
+      "description": "Plats de riz et riz sautés"
+    },
+    {
+      "nom": "Soupes",
+      "description": "Soupes traditionnelles chinoises"
+    },
+    {
+      "nom": "Accompagnements",
+      "description": "Riz nature, légumes vapeur et autres accompagnements"
+    }
+  ]
+}

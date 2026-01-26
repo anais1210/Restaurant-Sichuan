@@ -1,0 +1,35 @@
+{
+  "nom": "Restaurant Sichuan Paris",
+  "nom_chinois": "川里川外",
+  "slogan": "L'authenticité du Sichuan à Paris",
+  "description": "Restaurant authentique proposant une cuisine traditionnelle du Sichuan, une province célèbre pour ses saveurs audacieuses et l'art du piment. Chaque plat est préparé avec des ingrédients authentiques et des recettes traditionnelles transmises de génération en génération.",
+  "experience": "15+ années d'expérience",
+  "nombre_plats": "60+ plats authentiques",
+  "chef": {
+    "origine": "Province du Sichuan",
+    "description": "Notre chef vient directement de la province du Sichuan et prépare tous les plats sur place chaque jour."
+  },
+  "adresse": {
+    "rue": "17 Rue Le Peletier",
+    "code_postal": "75009",
+    "ville": "Paris",
+    "pays": "France",
+    "arrondissement": "9ème arrondissement"
+  },
+  "contact": {
+    "telephone": "+33 1 47 70 64 11",
+    "telephone_international": "+33147706411"
+  },
+  "specialites": [
+    "Cuisine du Sichuan authentique",
+    "Plats épicés avec différents niveaux de piquant",
+    "Recettes traditionnelles",
+    "Ingrédients frais préparés chaque jour"
+  ],
+  "services": {
+    "sur_place": true,
+    "reservation_telephonique": true,
+    "informations_allergenes": "Disponibles sur demande",
+    "demandes_speciales": "Acceptées, nous contacter"
+  }
+}

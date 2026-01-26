@@ -1,0 +1,52 @@
+{
+  "horaires_ouverture": {
+    "lundi": {
+      "ouvert": true,
+      "midi": { "ouverture": "12:00", "fermeture": "14:30" },
+      "soir": { "ouverture": "18:30", "fermeture": "22:30" }
+    },
+    "mardi": {
+      "ouvert": true,
+      "midi": { "ouverture": "12:00", "fermeture": "14:30" },
+      "soir": { "ouverture": "18:30", "fermeture": "22:30" }
+    },
+    "mercredi": {
+      "ouvert": false,
+      "message": "Fermé le mercredi"
+    },
+    "jeudi": {
+      "ouvert": true,
+      "midi": { "ouverture": "12:00", "fermeture": "14:30" },
+      "soir": { "ouverture": "18:30", "fermeture": "22:30" }
+    },
+    "vendredi": {
+      "ouvert": true,
+      "midi": { "ouverture": "12:00", "fermeture": "14:30" },
+      "soir": { "ouverture": "18:30", "fermeture": "22:30" }
+    },
+    "samedi": {
+      "ouvert": true,
+      "midi": { "ouverture": "12:00", "fermeture": "14:30" },
+      "soir": { "ouverture": "18:30", "fermeture": "22:30" }
+    },
+    "dimanche": {
+      "ouvert": true,
+      "midi": { "ouverture": "12:00", "fermeture": "14:30" },
+      "soir": { "ouverture": "18:30", "fermeture": "22:30" }
+    }
+  },
+  "services": {
+    "dejeuner": {
+      "nom": "Service du midi",
+      "horaires": "12:00 - 14:30",
+      "description": "Déjeuner traditionnel du Sichuan"
+    },
+    "diner": {
+      "nom": "Service du soir",
+      "horaires": "18:30 - 22:30",
+      "description": "Dîner avec l'ensemble de la carte"
+    }
+  },
+  "jours_fermeture": ["mercredi"],
+  "resume": "Ouvert de lundi à dimanche (sauf mercredi) de 12h à 14h30 et de 18h30 à 22h30. Fermé le mercredi."
+}
