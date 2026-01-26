@@ -12,7 +12,8 @@ export default function ChatBot() {
   const [messages, setMessages] = useState<Message[]>([
     {
       role: "assistant",
-      content: "Bonjour ! Je suis l'assistant du Restaurant Sichuan Paris. Comment puis-je vous aider ?",
+      content:
+        "Bonjour ! Je suis l'assistant du Restaurant Sichuan Paris. Comment puis-je vous aider ?",
     },
   ]);
   const [input, setInput] = useState("");
@@ -45,14 +46,18 @@ export default function ChatBot() {
       const data = await response.json();
       setMessages((prev) => [
         ...prev,
-        { role: "assistant", content: data.answer || "Désolé, une erreur s'est produite." },
+        {
+          role: "assistant",
+          content: data.answer || "Désolé, une erreur s'est produite.",
+        },
       ]);
     } catch {
       setMessages((prev) => [
         ...prev,
         {
           role: "assistant",
-          content: "Désolé, je ne suis pas disponible pour le moment. Appelez-nous au +33 1 47 70 64 11.",
+          content:
+            "Désolé, je ne suis pas disponible pour le moment. Appelez-nous au +33 1 47 70 64 11.",
         },
       ]);
     } finally {
@@ -76,11 +81,26 @@ export default function ChatBot() {
         aria-label="Ouvrir le chat"
       >
         {isOpen ? (
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+          <svg
+            className="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M6 18L18 6M6 6l12 12"
+            />
           </svg>
         ) : (
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg
+            className="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
             <path
               strokeLinecap="round"
               strokeLinejoin="round"
@@ -100,7 +120,9 @@ export default function ChatBot() {
               <span className="text-white text-lg">川</span>
             </div>
             <div>
-              <h3 className="text-white font-semibold text-sm">Assistant Sichuan</h3>
+              <h3 className="text-white font-semibold text-sm">
+                Assistant Sichuan
+              </h3>
               <p className="text-white/70 text-xs">En ligne</p>
             </div>
           </div>
@@ -150,11 +172,17 @@ export default function ChatBot() {
                 disabled={isLoading}
               />
               <button
+                title="button"
                 onClick={sendMessage}
                 disabled={isLoading || !input.trim()}
                 className="w-10 h-10 bg-red-600 hover:bg-red-700 disabled:bg-gray-600 rounded-full flex items-center justify-center transition-colors"
               >
-                <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg
+                  className="w-5 h-5 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
