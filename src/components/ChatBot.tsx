@@ -2,6 +2,8 @@
 
 import { useState, useRef, useEffect } from "react";
 
+const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3002";
+
 interface Message {
   role: "user" | "assistant";
   content: string;
@@ -37,7 +39,7 @@ export default function ChatBot() {
     setIsLoading(true);
 
     try {
-      const response = await fetch("http://localhost:3002/ask", {
+      const response = await fetch(`${API_URL}/ask`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ question: userMessage }),
