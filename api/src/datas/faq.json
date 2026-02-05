@@ -21,6 +21,11 @@
       "reponse": "Oui, nous sommes ouverts le dimanche de 12h00 à 14h30 pour le déjeuner et de 18h30 à 22h30 pour le dîner."
     },
     {
+      "question": "Êtes-vous ouvert aujourd'hui ?",
+      "variations": ["etes-vous ouvert", "ferme aujourd'hui"],
+      "reponse": "Nous sommes ouverts de lundi à dimanche (sauf mercredi) de 12h00 à 14h30 pour le déjeuner et de 18h30 à 22h30 pour le dîner. Nous sommes fermés le mercredi."
+    },
+    {
       "question": "Comment puis-je réserver ?",
       "variations": ["réservation", "réserver une table", "booking"],
       "reponse": "Vous pouvez réserver par téléphone au +33 1 47 70 64 11. N'hésitez pas à nous appeler pour réserver votre table."
