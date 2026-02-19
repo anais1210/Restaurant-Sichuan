@@ -40,3 +40,4 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 /claude
+/api/EXPLICATIONS_IA_DETAILLEES.md
