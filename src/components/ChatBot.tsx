@@ -8,6 +8,9 @@ interface Message {
 }
 
 export default function ChatBot() {
+  const apiBaseUrl = (process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:3002")
+    .replace(/\/+$/, "");
+
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
     {
@@ -37,7 +40,7 @@ export default function ChatBot() {
     setIsLoading(true);
 
     try {
-      const response = await fetch("http://localhost:3002/ask", {
+      const response = await fetch(`${apiBaseUrl}/ask`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ question: userMessage }),

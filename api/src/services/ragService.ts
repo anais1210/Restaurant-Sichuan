@@ -1,7 +1,22 @@
 import fs from "fs";
 import path from "path";
 
-const dataDir = path.join(process.cwd(), "src/datas");
+const DATA_DIR_CANDIDATES = [
+  path.resolve(process.cwd(), "src/datas"),
+  path.resolve(process.cwd(), "api/src/datas"),
+  path.resolve(__dirname, "../datas"),
+  path.resolve(__dirname, "../../src/datas"),
+  path.resolve(__dirname, "../../../src/datas"),
+];
+
+function resolveDataDir(): string | null {
+  for (const dir of DATA_DIR_CANDIDATES) {
+    if (fs.existsSync(dir)) {
+      return dir;
+    }
+  }
+  return null;
+}
 
 interface FAQItem {
   question: string;
@@ -96,6 +111,15 @@ function checkFAQMatch(question: string, faqData: FAQData): string | null {
 
 export function retrieveRelevantDoc(question: string): string | null {
   try {
+    const dataDir = resolveDataDir();
+    if (!dataDir) {
+      console.error("Erreur RAG: dossier src/datas introuvable", {
+        cwd: process.cwd(),
+        candidates: DATA_DIR_CANDIDATES,
+      });
+      return null;
+    }
+
     const files = fs.readdirSync(dataDir).filter(f => f.endsWith(".json"));
 
     // D'abord, vérifier si c'est une FAQ directe

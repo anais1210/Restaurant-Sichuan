@@ -6,7 +6,21 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.retrieveRelevantDoc = retrieveRelevantDoc;
 const fs_1 = __importDefault(require("fs"));
 const path_1 = __importDefault(require("path"));
-const dataDir = path_1.default.join(process.cwd(), "src/datas");
+const DATA_DIR_CANDIDATES = [
+    path_1.default.resolve(process.cwd(), "src/datas"),
+    path_1.default.resolve(process.cwd(), "api/src/datas"),
+    path_1.default.resolve(__dirname, "../datas"),
+    path_1.default.resolve(__dirname, "../../src/datas"),
+    path_1.default.resolve(__dirname, "../../../src/datas"),
+];
+function resolveDataDir() {
+    for (const dir of DATA_DIR_CANDIDATES) {
+        if (fs_1.default.existsSync(dir)) {
+            return dir;
+        }
+    }
+    return null;
+}
 // Mots-clés par fichier pour le routing
 const KEYWORDS_MAP = {
     "horaires.json": ["horaire", "heure", "ouvert", "fermé", "ouverture", "fermeture", "midi", "soir", "dimanche", "mercredi", "lundi", "mardi", "jeudi", "vendredi", "samedi", "quand"],
@@ -75,6 +89,14 @@ function checkFAQMatch(question, faqData) {
 }
 function retrieveRelevantDoc(question) {
     try {
+        const dataDir = resolveDataDir();
+        if (!dataDir) {
+            console.error("Erreur RAG: dossier src/datas introuvable", {
+                cwd: process.cwd(),
+                candidates: DATA_DIR_CANDIDATES,
+            });
+            return null;
+        }
         const files = fs_1.default.readdirSync(dataDir).filter(f => f.endsWith(".json"));
         // D'abord, vérifier si c'est une FAQ directe
         const faqPath = path_1.default.join(dataDir, "faq.json");
