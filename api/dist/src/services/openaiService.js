@@ -7,17 +7,9 @@ exports.askAI = askAI;
 const dotenv_1 = __importDefault(require("dotenv"));
 dotenv_1.default.config();
 const openai_1 = __importDefault(require("openai"));
-let client = null;
-function getOpenAIClient() {
-    const apiKey = process.env.OPENAI_API_KEY;
-    if (!apiKey) {
-        throw new Error("OPENAI_API_KEY is missing");
-    }
-    if (!client) {
-        client = new openai_1.default({ apiKey });
-    }
-    return client;
-}
+const client = new openai_1.default({
+    apiKey: process.env.OPENAI_API_KEY,
+});
 const SYSTEM_PROMPT = `Tu es l'assistant virtuel du Restaurant Sichuan Paris (川里川外), un restaurant authentique de cuisine du Sichuan situé au 17 Rue Le Peletier, 75009 Paris.
 
 RÈGLES IMPORTANTES:
@@ -44,11 +36,11 @@ ${context}
 Question du client: ${question}
 
 Réponds de manière naturelle et concise.`;
-    const response = await getOpenAIClient().chat.completions.create({
+    const response = await client.chat.completions.create({
         model: "gpt-4o-mini",
         messages: [
             { role: "system", content: SYSTEM_PROMPT },
-            { role: "user", content: userPrompt },
+            { role: "user", content: userPrompt }
         ],
         temperature: 0.7,
         max_tokens: 200,

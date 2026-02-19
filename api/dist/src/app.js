@@ -16,41 +16,28 @@ app.use((0, cors_1.default)({
 }));
 app.use(express_1.default.json());
 const PORT = process.env.PORT || 3002;
-app.get("/health", (_req, res) => {
-    res.json({ ok: true });
-});
 app.post("/ask", async (req, res) => {
-    try {
-        const { question } = req.body;
-        // RULES
-        if (!question || question.trim().length < 3) {
-            return res.status(400).json({ error: "Question invalide" });
-        }
-        // CACHE
-        const cached = (0, memoryCache_1.getFromCache)(question);
-        if (cached) {
-            return res.json({ answer: cached, cached: true });
-        }
-        // RAG
-        const context = (0, ragService_1.retrieveRelevantDoc)(question);
-        if (!context) {
-            return res.json({ answer: "Je ne sais pas" });
-        }
-        // IA
-        const answer = await (0, openaiService_1.askAI)(context, question);
-        // SAVE CACHE
-        (0, memoryCache_1.saveToCache)(question, answer);
-        res.json({ answer });
+    const { question } = req.body;
+    // RULES
+    if (!question || question.trim().length < 3) {
+        return res.status(400).json({ error: "Question invalide" });
     }
-    catch (error) {
-        const message = error instanceof Error ? error.message : "Unknown error";
-        console.error("POST /ask failed:", message);
-        res.status(500).json({ error: "Internal server error" });
+    // CACHE
+    const cached = (0, memoryCache_1.getFromCache)(question);
+    if (cached) {
+        return res.json({ answer: cached, cached: true });
     }
+    // RAG
+    const context = (0, ragService_1.retrieveRelevantDoc)(question);
+    if (!context) {
+        return res.json({ answer: "Je ne sais pas" });
+    }
+    // IA
+    const answer = await (0, openaiService_1.askAI)(context, question);
+    // SAVE CACHE
+    (0, memoryCache_1.saveToCache)(question, answer);
+    res.json({ answer });
 });
-if (process.env.VERCEL !== "1") {
-    app.listen(PORT, () => {
-        console.log(`AI Restaurant Assistant running on port ${PORT}`);
-    });
-}
-exports.default = app;
+app.listen(PORT, () => {
+    console.log(`AI Restaurant Assistant running on port ${PORT}`);
+});
