@@ -35,5 +35,13 @@ jobs:
         run: npm run build
         working-directory: api
 
+      - name: Validate deploy hook secret
+        run: |
+          if [ -z "${{ secrets.API_DEPLOY_HOOK_URL }}" ]; then
+            echo "Missing secret: API_DEPLOY_HOOK_URL"
+            echo "Go to Settings > Secrets and variables > Actions and add API_DEPLOY_HOOK_URL."
+            exit 1
+          fi
+
       - name: Trigger API deploy hook
         run: curl -fsSL -X POST "${{ secrets.API_DEPLOY_HOOK_URL }}"
