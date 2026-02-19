@@ -11,9 +11,7 @@ const openaiService_1 = require("./services/openaiService");
 const memoryCache_1 = require("../cache/memoryCache");
 dotenv_1.default.config();
 const app = (0, express_1.default)();
-app.use((0, cors_1.default)({
-    origin: "*",
-}));
+app.use((0, cors_1.default)());
 app.use(express_1.default.json());
 const PORT = process.env.PORT || 3002;
 app.post("/ask", async (req, res) => {
